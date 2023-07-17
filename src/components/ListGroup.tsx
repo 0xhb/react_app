@@ -4,9 +4,10 @@ import { useState } from "react";
 interface Props {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   // let cities = ["Attaouia", "Marrakech", "Safi", "Tangier"];
   // const handleEvent = (event: MouseEvent) => console.log(event);
   const [selectedIndex, setSelectedIndex] = useState(-1); //HOOk: telling react that the var state will change
@@ -26,7 +27,10 @@ function ListGroup({ items, heading }: Props) {
                 : "list-group-item"
             }
             key={item}
-            onClick={() => setSelectedIndex(index)}
+            onClick={() => {
+              setSelectedIndex(index);
+              onSelectItem(item);
+            }}
           >
             {item}
           </li>
