@@ -1,9 +1,10 @@
-import Message from "./message";
+import ListGroup from "./components/ListGroup";
 
 function App() {
+  let Family = ["El Housseine", "Mohammed", "AbdErrahim", "Mami"];
   return (
     <div>
-      <Message />
+      <ListGroup items={Family} heading="Family" />
     </div>
   );
 }
