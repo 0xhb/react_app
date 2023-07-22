@@ -1,19 +1,30 @@
-import { useState } from "react";
+import ExpandableText from "./components/ExpandableText";
 
 function App() {
-  const [cart, setCart] = useState({
-    name: "Spicy Pepperoni",
-    toppings: ["mushroom"],
-  });
-
-  const handleClick = () => {
-    // setGame({ ...game, player: { ...game.player, name: "jhon yo" } });
-    // setPizza({ ...pizza, toppings: [...toppings, "cheese"] });
-    // setCart({ ...cart, items: cart.items.map(item => item.id === 1 ? {...item, item.quantity + 1} : item) });
-  };
+  return (
+    <ExpandableText maxChar={100}>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde officia
+      minus reiciendis id, animi labore sequi. Assumenda suscipit voluptate
+      laudantium sunt? Molestias eveniet totam reprehenderit voluptatibus
+      expedita libero laudantium, sunt similique sed atque asperiores
+      necessitatibus dignissimos assumenda mollitia neque molestiae reiciendis
+      nostrum. Consectetur dol
+    </ExpandableText>
+  );
 }
 
 export default App;
+
+// const [cart, setCart] = useState({
+//   name: "Spicy Pepperoni",
+//   toppings: ["mushroom"],
+// });
+
+// const handleClick = () => {
+//   // setGame({ ...game, player: { ...game.player, name: "jhon yo" } });
+//   // setPizza({ ...pizza, toppings: [...toppings, "cheese"] });
+//   // setCart({ ...cart, items: cart.items.map(item => item.id === 1 ? {...item, item.quantity + 1} : item) });
+// };
 
 // const [cartItems, setCartItems] = useState(["product 1", "product 2"]);
 // return (
