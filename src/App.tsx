@@ -15,6 +15,25 @@ function App() {
     setDrink({ ...drink, price: drink.price + 1 });
   };
 
+  //updating state arrays:
+  const [tags, setTags] = useState(["happy", "excited"]);
+  //add
+  setTags([...tags, "afraid"]);
+
+  //remove
+  setTags(tags.filter((tag) => tag !== "happy"));
+
+  //update
+  setTags(tags.map((tag) => (tag === "happy" ? "happiness" : tag)));
+
+  //updating array of objects:
+  const [bugs, setBugs] = useState([
+    { id: 1, name: "bug 1", fixed: false },
+    { id: 2, name: "bug 2", fixed: false },
+  ]);
+  //update here
+  setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+
   return (
     <div>
       {drink.price}
