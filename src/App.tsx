@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Like from "./components/Like";
+import { produce } from "immer";
 
 function App() {
   const [person, setPerson] = useState({
@@ -33,6 +34,14 @@ function App() {
   ]);
   //update here
   setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+  //or better:
+  setBugs(
+    produce((draft) => {
+      //draft is like a copy of the bugs array
+      const bug = draft.find((bug) => bug.id === 1);
+      if (bug) bug.fixed = true;
+    })
+  );
 
   return (
     <div>
